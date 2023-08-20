@@ -25,7 +25,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-            //   User
+    //   User
     public function index()
     {
         return view('user.home');
@@ -34,8 +34,8 @@ class HomeController extends Controller
     public function userprofile()
     {
         $url = url('/user/profile');
-        $title = "Profile Details"; 
-        $data = compact('url','title');
+        $title = "Profile Details";
+        $data = compact('url', 'title');
         return view('user.addprofile')->with($data);
     }
 
@@ -59,17 +59,17 @@ class HomeController extends Controller
         $user->state = $request->state;
         $user->zip = $request->zip;
         $result = $user->save();
-        if($result){
-            return back()->with('Success','User Data Registered Successfully.');
-        }else{
+        if ($result) {
+            return back()->with('Success', 'User Data Registered Successfully.');
+        } else {
             return back()->with('Fail', 'User Data Not Found Please Try Again.');
-        }        
-        return view('user.addprofile'); 
+        }
+        return view('user.addprofile');
     }
 
     public function userdetail()
     {
-        $list = Userdetail::all();        
+        $list = Userdetail::all();
         $data = compact('list');
         return view('user.userdetail')->with($data);
     }
@@ -77,19 +77,16 @@ class HomeController extends Controller
     public function useredit($id)
     {
         $list = Userdetail::find($id);
-        if(is_null($list)){
-        //     echo "<pre>";
-        // print_r($list);
-        // die;
+        if (is_null($list)) {            
             return view('user.userdetail');
-        }else{       
-            $url = url('/user/update') ."/". $id;
-            $title = "Update Details"; 
-        $data = compact('list','url','title');
-        return view('user.addprofile')->with($data);
+        } else {
+            $url = url('/user/update') . "/" . $id;
+            $title = "Update Details";
+            $data = compact('list', 'url', 'title');
+            return view('user.addprofile')->with($data);
         }
     }
-    
+
 
     public function userupdate($id, Request $request)
     {
@@ -104,20 +101,19 @@ class HomeController extends Controller
         $user->state = $request->state;
         $user->zip = $request->zip;
         $result = $user->save();
-        if($result){
-            return redirect('/user/detail')->with('Success','User Data Successfully Update.');
-        }else{
+        if ($result) {
+            return redirect('/user/detail')->with('Success', 'User Data Successfully Update.');
+        } else {
             return redirect('/user/detail')->with('Fail', 'User Data Not Update Please Try Again.');
-        }        
+        }
         return view('user.userdetail');
-        
     }
     public function userdelete($id)
     {
-        $list = Userdetail::find($id); 
-        if(!is_null($list)){
+        $list = Userdetail::find($id);
+        if (!is_null($list)) {
             $list->delete();
-        }       
+        }
         return redirect('/user/detail');
     }
 
@@ -125,7 +121,7 @@ class HomeController extends Controller
     {
         return view('user.usercontact');
     }
-            //   User End
+    //   User End
     /**
      * Show the application dashboard.
      *
@@ -133,14 +129,11 @@ class HomeController extends Controller
      */
     public function adminHome()
     {
-         $data = User::all();
+        $data = User::all();
         $data = compact('data');
-        // echo "<pre>";
-        // print_r($data);
-        // die;
         return view('admin.adminHome')->with($data);
     }
-   
+
     public function adminprofile()
     {
         return view('admin.profile');
@@ -150,10 +143,10 @@ class HomeController extends Controller
     {
         return view('admin.addadmin');
     }
-    
+
     public function adminsave(Request $request)
     {
-            $request->validate([
+        $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
@@ -165,38 +158,32 @@ class HomeController extends Controller
         $admin->password = Hash::make($request['password']);
         $admin->type = $request->type;
         $result = $admin->save();
-        if($result){
-            return back()->with('Success','Admin Data Registered Successfully.');
-        }else{
+        if ($result) {
+            return back()->with('Success', 'Admin Data Registered Successfully.');
+        } else {
             return back()->with('Fail', 'Admin Data Not Found Please Try Again.');
-        }            
+        }
         return view('admin.addadmin');
     }
 
     public function admindelete($id)
     {
-        $list = User::find($id); 
-        if(!is_null($list)){
+        $list = User::find($id);
+        if (!is_null($list)) {
             $list->delete();
-        }       
+        }
         return redirect('/admin/home');
     }
 
-    
+
     public function adminblank()
     {
         return view('admin.blank');
     }
-                
-    
-            
+
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    // public function managerHome()
-    // {
-    //     return view('managerHome');
-    // }
 }

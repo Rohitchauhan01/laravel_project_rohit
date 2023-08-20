@@ -29,7 +29,7 @@ All Normal Users Routes List
 --------------------------------------------
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:user'])->group(function () {
-  
+
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/user/profile', [HomeController::class, 'userprofile'])->name('user.profile');
     Route::post('/user/profile', [HomeController::class, 'createprofile'])->name('user.createprofile');
@@ -41,19 +41,15 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/user/delete/{id}', [HomeController::class, 'userdelete'])->name('user.delete');
 
     Route::get('/user/contact', [HomeController::class, 'usercontact'])->name('user.contact');
-
-
-
-
 });
-  
+
 /*------------------------------------------
 --------------------------------------------
 All Admin Routes List
 --------------------------------------------
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
-  
+
     Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
 
     Route::get('/admin/profile', [HomeController::class, 'adminprofile'])->name('admin.profile');
@@ -65,21 +61,14 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
 
     Route::get('/admin/blank', [HomeController::class, 'adminblank'])->name('admin.blank');
-
-
-
-
 });
-  
+
 /*------------------------------------------
 --------------------------------------------
 All Admin Routes List
 --------------------------------------------
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:manager'])->group(function () {
-  
+
     Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
-
-    // Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
-
 });

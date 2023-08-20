@@ -1,21 +1,6 @@
-{{--<!-- @extends('layouts.app') -->--}}	
 @extends('layouts.admin_main')
 
 @section('main-content')
-{{--<div class="container">
-    <!-- <div class="row justify-content-center">
-        <div class="col-md-8"> -->
-            <!-- <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-<div class="card-body">
-	You are a Admin User.
-</div>
-</div> -->
-<!-- </div>
-    </div> -->
-</div>--}}
-
 <main class="content">
 	<div class="container-fluid p-0">
 
@@ -55,7 +40,7 @@
 						<pre>
 							<!-- {{print_r($data)}} -->
 						</pre>
-						<tbody>							
+						<tbody>
 							<tr>
 								<td>{{$data->name}}</td>
 								<td class="d-none d-xl-table-cell">{{$data->email}}</td>

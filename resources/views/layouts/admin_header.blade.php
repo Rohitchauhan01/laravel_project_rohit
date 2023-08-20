@@ -16,7 +16,7 @@
 	<link href="{{ asset('das_css/css/app.css')}}" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+	@vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
 <body>
@@ -43,32 +43,16 @@
 							<i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
 						</a>
 					</li>
-
-					<!-- <li class="sidebar-item">
-						<a class="sidebar-link" href="{{url('admin\setting')}}">
-							<i class="align-middle" data-feather="settings"></i> <span class="align-middle">Settings</span>
-						</a>
-					</li> -->
 					<li class="sidebar-item">
 						<a href="#forms" data-toggle="collapse" class="sidebar-link collapsed">
 							<i class="align-middle" data-feather="check-circle"></i> <span class="align-middle">Admin</span>
 						</a>
 						<ul id="forms" class="sidebar-dropdown list-unstyled collapse " data-parent="#sidebar">
-						<li class="sidebar-item"><a class="sidebar-link" href="{{url('admin\add')}}">
-						<span class="align-middle">Add Admin</span>
-						</a></li>
-						<!-- <li class="sidebar-item"><a class="sidebar-link" href="{{url('admin/show')}}">
-						<span class="align-middle">Admin List</span>
-						</a></li> -->
+							<li class="sidebar-item"><a class="sidebar-link" href="{{url('admin\add')}}">
+									<span class="align-middle">Add Admin</span>
+								</a></li>
 						</ul>
 					</li>
-
-					<!-- <li class="sidebar-item">
-						<a class="sidebar-link" href="{{url('admin/invoice')}}">
-              <i class="align-middle" data-feather="credit-card"></i> <span class="align-middle">Invoice</span>
-            </a>
-					</li> -->
-
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="{{url('admin/blank')}}">
 							<i class="align-middle" data-feather="book"></i> <span class="align-middle">Blank</span>
@@ -78,23 +62,12 @@
 					<li class="sidebar-header">
 						Tools & Components
 					</li>
-					<!-- <li class="sidebar-item">
-						<a class="sidebar-link" href="icons-feather.html">
-              <i class="align-middle" data-feather="coffee"></i> <span class="align-middle">Icons</span>
-            </a>
-					</li> -->
-
-					
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="#">
 							<i class="align-middle" data-feather="list"></i> <span class="align-middle">Tables</span>
 						</a>
 					</li>
-
-
 				</ul>
-
-
 			</div>
 		</nav>
 
@@ -237,19 +210,6 @@
 								</div>
 							</div>
 						</li>
-						<!-- <li class="nav-item dropdown">
-							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-toggle="dropdown">
-								<i class="align-middle" data-feather="settings"></i>
-							</a>
-
-							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-toggle="dropdown">
-								<img src="{{ asset('das_css/img/avatars/avatar.jpg')}}" class="avatar img-fluid rounded mr-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
-							</a>
-							<div class="dropdown-menu dropdown-menu-right">
-								
-								<a class="dropdown-item" href="#">Log out</a>
-							</div>
-						</li> -->
 						<ul class="navbar-nav ms-auto">
 							<!-- Authentication Links -->
 							@guest

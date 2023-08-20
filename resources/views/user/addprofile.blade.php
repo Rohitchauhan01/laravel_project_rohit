@@ -1,51 +1,5 @@
 @extends('layouts.user_main')
 @section('content')
-<!-- Hero Section Begin -->
-<!-- <section class="hero hero-normal">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="hero__categories">
-                    <div class="hero__categories__all">
-                        <i class="fa fa-bars"></i>
-                        <span>All departments</span>
-                    </div>
-                    <ul>
-                        <li><a href="#">Fresh Meat</a></li>
-                        <li><a href="#">Vegetables</a></li>
-                        <li><a href="#">Fruit & Nut Gifts</a></li>
-                       
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-9">
-                <div class="hero__search">
-                    <div class="hero__search__form">
-                        <form action="#">
-                            <div class="hero__search__categories">
-                                All Categories
-                                <span class="arrow_carrot-down"></span>
-                            </div>
-                            <input type="text" placeholder="What do yo u need?">
-                            <button type="submit" class="site-btn">SEARCH</button>
-                        </form>
-                    </div>
-                    <div class="hero__search__phone">
-                        <div class="hero__search__phone__icon">
-                            <i class="fa fa-phone"></i>
-                        </div>
-                        <div class="hero__search__phone__text">
-                            <h5>+65 11.188.888</h5>
-                            <span>support 24/7 time</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
-<!-- Hero Section End -->
-
 <!-- Breadcrumb Section Begin -->
 <section class="breadcrumb-section set-bg" data-setbg="{{ asset('web_css/img/breadcrumb.jpg')}}">
     <div class="container">
@@ -157,7 +111,6 @@
                                 <img alt="Charles Hall" src="{{ asset('das_css/img/avatars/avatar.jpg')}}" class="rounded-circle img-responsive mt-2" width="128" height="128" />
                                 <div class="mt-2">
                                     <span class="btn btn-primary"><i class="fas fa-upload"></i> Upload</span>
-                                    <!-- <input type="image" src="" alt=""> -->
                                 </div>
                                 <small>For best results, use an image at least 128px by 128px in .jpg format</small>
                             </div>
@@ -185,9 +138,7 @@
                         </div>
                     </div>
                 </form>
-
             </div>
-            
         </div>
     </div>
 </section>
